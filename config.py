@@ -23,9 +23,9 @@ SONG_DOWNLOAD_DURATION = int(
 
 LOGGER_ID = int(getenv("LOGGER_ID", ""))
 
-OWNER_ID = int(getenv("OWNER_ID", "7552579717"))
+OWNER_ID = int(getenv("OWNER_ID", "7931860537"))
 
-BOT_USERNAME = getenv("BOT_USERNAME" , "AloneXMusicBot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "NAXQUEEN_BOT")
 
 COMMAND_HANDLER = getenv("COMMAND_HANDLER", "! / .").split()
 
@@ -35,15 +35,15 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/TeamAloneOp/AloneX",
+    "https://github.com/ASIFXQUEEN/QUEENXNAVEIB-UPDATED",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "ALONE")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", ""
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/AloneUpdates")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/AloneXSupport")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/arame9")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/bot_heart")
 
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
@@ -86,22 +86,21 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://files.catbox.moe/n2f6fh.jpg"
+    "START_IMG_URL", "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://files.catbox.moe/n2f6fh.jpg"
+    "PING_IMG_URL", "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
 )
-PLAYLIST_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-TELEGRAM_AUDIO_URL = "https://files.catbox.moe/n2f6fh.jpg"
-TELEGRAM_VIDEO_URL = "https://files.catbox.moe/n2f6fh.jpg"
-STREAM_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-SOUNCLOUD_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/n2f6fh.jpg"
-
+PLAYLIST_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+STATS_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+TELEGRAM_AUDIO_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+TELEGRAM_VIDEO_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+STREAM_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+SOUNCLOUD_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+YOUTUBE_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+SPOTIFY_ALBUM_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
+SPOTIFY_PLAYLIST_IMG_URL = "https://i.ibb.co/7tqFxT5s/IMG-20250303-200846-176.jpg"
 
 def time_to_seconds(time):
     stringt = str(time)
