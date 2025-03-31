@@ -72,7 +72,7 @@
    ```
 5. **Clone the Repository**
    ```bash
-   git clone https://github.com/TeamAloneOp/AloneX && cd AloneX
+   git clone https://github.com/ASIFXQUEEN/QUEENXNAVEIB-UPDATED && cd QUEENXNAVEIB-UPDATED
    ```
 6. **Install Requirements**
    ```bash
