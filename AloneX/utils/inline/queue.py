@@ -72,11 +72,7 @@ def aq_markup(_, chat_id):
             #InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             #InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         #],
-        [
-            InlineKeyboardButton(
-                text="🌿𝐔ᴘᴅᴀᴛᴇs🍃", url=f"\x68\x74\x74\x70\x73\x3A\x2F\x2F\x74\x2E\x6D\x65\x2F\x41\x6C\x6F\x6E\x65\x58\x42\x6F\x74\x73"
-            ),
-        ],
+       
         [InlineKeyboardButton(text="[✗]𝐂ʟᴏsᴇ[✗]", callback_data="close")],
     ]
     return buttons
