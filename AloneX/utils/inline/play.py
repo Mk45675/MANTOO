@@ -94,7 +94,7 @@ def stream_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="• 𝐌ʏ 𝐆ᴏᴅ •", url=f"https://t.me/@ASHLF903"
+                text="• 𝐌ʏ 𝐆ᴏᴅ •", url=f"https://t.me/ASHLF903"
             ),
             InlineKeyboardButton(
                 text="• 𝐒ᴜᴘᴘᴏʀᴛ •", url=config.SUPPORT_CHAT
