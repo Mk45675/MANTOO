@@ -72,7 +72,7 @@ def stream_markup_timer(_, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text="• 𝐎ᴡɴᴇʀ •", user_id=config.OWNER_ID,
+                text="• 𝐌ʏ 𝐆ᴏᴅ •", url=f"https://t.me/ASHLF903"
             ),
             InlineKeyboardButton(
                 text="• 𝐒ᴜᴘᴘᴏʀᴛ •", url=config.SUPPORT_CHAT
@@ -94,7 +94,7 @@ def stream_markup(_, chat_id):
         ],
         [
             InlineKeyboardButton(
-                text="• 𝐎ᴡɴᴇʀ •", user_id=config.OWNER_ID,
+                text="• 𝐌ʏ 𝐆ᴏᴅ •", url=f"https://t.me/@ASHLF903"
             ),
             InlineKeyboardButton(
                 text="• 𝐒ᴜᴘᴘᴏʀᴛ •", url=config.SUPPORT_CHAT
