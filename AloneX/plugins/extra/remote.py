@@ -11,8 +11,8 @@ async def rpromote(client, message: Message):
     try:
         # Extracting user_id and group_id from the message
         args = message.text.split()
-        group_id = args[1]
-        admin_tag = args[2] if len(args) > 2 else "ㅤ"
+     #   group_id = args[1]
+#        admin_tag = args[2] if len(args) > 2 else "ㅤ"
 
         # Resolve the ɢʀᴏᴜᴘ or username to an actual group_id if provided
         if group_id.startswith("https://t.me/"):
@@ -48,11 +48,15 @@ async def rpromote(client, message: Message):
             ),
         )
         
+          # Check if admin tag is provided
+        admin_tag = args[2] if len(args) > 2 else "ㅤ"
+        await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
+        
         # Check if the group is a supergroup
-        group = await client.get_chat(group_id)
-        if group.type == "supergroup":
-            await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
-            invite_link = await group.export_invite_link()
+     #   group = await client.get_chat(group_id)
+     #   if group.type == "supergroup":
+        #    await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
+    #        invite_link = await group.export_invite_link()
             await ALONE.edit(
                 f"sᴜᴄᴄᴇssғᴜʟʟʏ ᴘʀᴏᴍᴏᴛᴇᴅ {message.from_user.mention} ᴛᴏ ᴀᴅᴍɪɴ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ <code>{group_id}</code> ᴡɪᴛʜ ᴛʜᴇ ᴛɪᴛʟᴇ: {admin_tag}",
                 reply_markup=InlineKeyboardMarkup([
