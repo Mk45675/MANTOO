@@ -36,11 +36,11 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AloneX.plugins" + all_module)
-    LOGGER("AloneX.plugins").info("sᴜᴄᴄᴇssғᴜʟʟʏ ɪᴍᴘᴏʀᴛᴇᴅ ᴀʟʟ ᴍᴏᴅᴜʟᴇs...")
+    LOGGER("AloneX.plugins").info("sabu kichi lod heigala modul jaka miss queen kai")
     await userbot.start()
     await Alone.start()
     try:
-        await Alone.stream_call("https://te.legra.ph/file/39b302c93da5c457a87e3.mp4")
+        await Alone.stream_call("https://files.catbox.moe/sfr91g.mp4")
     except NoActiveGroupCall:
         LOGGER("AloneX").error(
             "ʙsᴅᴋ ᴠᴄ ᴛᴏ ᴏɴ ᴋᴀʀʟᴇ  ʟᴏɢ ɢʀᴏᴜᴘ\ᴄʜᴀɴɴᴇʟ ᴋɪ.\n\n ᴏɴ ᴋᴀʀᴋᴇ ᴀᴀ ᴛᴀʙ ᴛᴀᴋ ʙᴏᴛ ʙᴀɴᴅ ᴋᴀʀ ʀʜᴀ ʜᴏᴏɴ..."
@@ -50,12 +50,12 @@ async def init():
         pass
     await Alone.decorators()
     LOGGER("AloneX").info(
-        "ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ, ɴᴏᴡ ɢɪʙ ʏᴏᴜʀ ɢɪʀʟғʀɪᴇɴᴅ ᴄʜᴜᴛ ɪɴ @AloneXBots"
+        "ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ, ebe miss queen ra number ana nahele auu thare bot band karidebi"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("AloneX").info("ᴍᴀᴀ ᴄʜᴜᴅᴀ ᴍᴀɪɴ ʙᴏᴛ ʙᴀɴᴅ ᴋᴀʀ ʀʜᴀ Aʟᴏɴᴇ Mᴜsɪᴄ Bᴏᴛ...")
+    LOGGER("AloneX").info("ᴍᴀᴀ ᴄʜᴜᴅᴀ ᴍᴀɪɴ ʙᴏᴛ ʙᴀɴᴅ ᴋᴀʀ ʀʜᴀ hun miss queen number kai delani..")
 
 
 if __name__ == "__main__":
